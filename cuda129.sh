@@ -62,3 +62,7 @@ echo "Python version: $(python --version)"
 cd "$HOME"
 
 conda install -y -c nvidia -c conda-forge pytorch=2.9 transformers=4.57 cuda=12.9.1 cuda-toolkit=12.9
+
+export CUDA_PATH=/usr/local/cuda
+export PATH=$CUDA_PATH/bin:$PATH
+pip install --no-build-isolation transformer_engine[pytorch]
