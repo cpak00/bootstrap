@@ -1,5 +1,8 @@
 #! /bin/bash
-set -xeo pipefail
+# set -xeo pipefail
+
+git config --global user.email "cymcpak00@gmail.com"
+git config --global user.name "Chen Yiming"
 
 MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
 MINICONDA_DIR="${HOME}/miniconda"
@@ -26,10 +29,9 @@ ensure_miniconda() {
     else
         install_miniconda
     fi
-    if [ -x "${conda_bin}" ]; then
-        ${conda_bin} tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
-        ${conda_bin} tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
-    fi
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+    conda init --all
     export PATH="${MINICONDA_DIR}/bin:${PATH}"
 }
 
@@ -38,8 +40,8 @@ ensure_miniconda
 ENV_NAME="te"
 PYTHON_VERSION="3.12"
 
-CONDA_BASE=$(conda info --base)
-source "${CONDA_BASE}/etc/profile.d/conda.sh"
+# CONDA_BASE=$(conda info --base)
+# source "${CONDA_BASE}/etc/profile.d/conda.sh"
 conda activate base
 
 # --- Create the environment if it doesn’t exist ---
@@ -59,4 +61,4 @@ echo "Python version: $(python --version)"
 
 cd "$HOME"
 
-conda install -y -c nvidia -c conda-forge torch=2.9 transformers=4.57 transformer-engine-torch=2.8 cuda=12.9.1 cuda-toolkit=12.9 cuda-toolkit-dev=12.9
+conda install -y -c nvidia -c conda-forge torch=2.9 transformers=4.57 transformer-engine-torch=2.8 cuda=12.9.1 cuda-toolkit=12.9
