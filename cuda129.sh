@@ -65,6 +65,7 @@ conda install -y -c nvidia -c conda-forge pytorch=2.9 transformers=4.57 cuda=12.
 
 export CUDA_PATH=/usr/local/cuda
 export PATH=$CUDA_PATH/bin:$PATH
+pip install deepspeed
 pip install --no-build-isolation transformer_engine[pytorch]
 pip install triton
 pip install lm_eval
