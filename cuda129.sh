@@ -29,10 +29,10 @@ ensure_miniconda() {
     else
         install_miniconda
     fi
+    export PATH="${MINICONDA_DIR}/bin:${PATH}"
     conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
     conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
     conda init --all
-    export PATH="${MINICONDA_DIR}/bin:${PATH}"
 }
 
 ensure_miniconda
