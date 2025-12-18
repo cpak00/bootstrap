@@ -35,8 +35,8 @@ ensure_miniconda() {
 
 ensure_miniconda
 
-ENV_NAME="triton"
-PYTHON_VERSION="3.11"
+ENV_NAME="te"
+PYTHON_VERSION="3.12"
 
 CONDA_BASE=$(conda info --base)
 source "${CONDA_BASE}/etc/profile.d/conda.sh"
@@ -58,38 +58,5 @@ echo "✅ Activated environment: $ENV_NAME"
 echo "Python version: $(python --version)"
 
 cd "$HOME"
-mkdir -p repos
-cd repos
-if [ ! -d "ascend-bench" ]; then
-    git clone --recurse-submodules git@github.com:mdrumond/ascend-bench.git
-else
-    echo "✅ Repository 'ascend-bench' already exists, skipping clone."
-fi
-cd ascend-bench
-python -m pip install -r requirements.txt
-python -m pip install -e .
 
-
-cd third-party/Triton-distributed
-
-git submodule deinit --all -f # deinit previous submodules
-rm -rf 3rdparty/triton # remove previous triton
-git submodule update --init --recursive
-
-# conda install -y -c nvidia -c conda-forge cuda=12.9.1 cuda-toolkit=12.9 cuda-toolkit-dev=12.9
-conda install -y -c conda-forge gxx_linux-64 ccache
-conda install -y -c conda-forge "libstdcxx-ng>=13" "libgcc-ng>=13" "protobuf=3.20"
-pip install torch==2.8
-pip install cuda-python==12.8 # need to align with your nvcc version
-pip install --upgrade "protobuf==3.20.*"
-pip install --upgrade deepspeed
-pip install setuptools==68.2.2 cython wheel pybind11 meson-python meson ninja flashinfer-python termcolor accelerate tg4perfetto
-pip install flash-attn --no-build-isolation
-pip uninstall -y triton
-pip uninstall -y triton_dist # remove previous triton-dist
-
-  
-
-export USE_TRITON_DISTRIBUTED_AOT=0
-echo 'numpy<2' > /tmp/pip_install_constraint.txt
-MAX_JOBS=8 pip install -c /tmp/pip_install_constraint.txt -e python[build,tests,tutorials] --verbose --no-build-isolation --use-pep517
+conda install -y -c nvidia -c conda-forge torch=2.9 transformers=4.57 transformer-engine-torch=2.8 cuda=12.9.1 cuda-toolkit=12.9 cuda-toolkit-dev=12.9
