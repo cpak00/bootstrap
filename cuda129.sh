@@ -61,4 +61,4 @@ echo "Python version: $(python --version)"
 
 cd "$HOME"
 
-conda install -y -c nvidia -c conda-forge torch=2.9 transformers=4.57 transformer-engine-torch=2.8 cuda=12.9.1 cuda-toolkit=12.9
+conda install -y -c nvidia -c conda-forge torch=2.9 transformers cuda=12.9.1 cuda-toolkit=12.9
