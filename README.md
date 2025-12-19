@@ -11,3 +11,8 @@ dataset.sh
 ---
 
 Download Redpajama and Chinese-Pretraining
+
+model.sh
+---
+
+Donwload Qwen3-4B, Clip and VAE model
