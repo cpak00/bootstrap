@@ -65,7 +65,7 @@ conda install -y -c nvidia -c conda-forge pytorch=2.9 transformers=4.57 cuda=12.
 
 export CUDA_PATH=/usr/local/cuda
 export PATH=$CUDA_PATH/bin:$PATH
-pip install deepspeed
+
 pip install --no-build-isolation transformer_engine[pytorch]
 pip install triton
 pip install lm_eval
@@ -73,6 +73,7 @@ pip install lmms_eval
 pip install libtorch
 pip install psutil
 pip install --no-build-isolation flash_attn
+pip install deepspeed
 
 # Check
 python -c "import torch; import transformers; import triton; import deepspeed; from flash_attn import flash_attn_varlen_func; assert torch.cuda.is_available(), 'no cuda';"
