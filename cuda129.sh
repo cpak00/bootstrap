@@ -71,4 +71,8 @@ pip install triton
 pip install lm_eval
 pip install lmms_eval
 pip install libtorch
+pip install psutil
 pip install --no-build-isolation flash_attn
+
+# Check
+python -c "import torch; import transformers; import triton; import deepspeed; from flash_attn import flash_attn_varlen_func; assert torch.cuda.is_available(), 'no cuda';"
