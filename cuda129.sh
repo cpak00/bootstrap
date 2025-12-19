@@ -70,4 +70,5 @@ pip install --no-build-isolation transformer_engine[pytorch]
 pip install triton
 pip install lm_eval
 pip install lmms_eval
-pip install flash_attn
+pip install libtorch
+pip install --no-build-isolation flash_attn
