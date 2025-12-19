@@ -6,3 +6,8 @@ cuda129.sh
 ---
 
 CUDA12.9 + PyTorch 
+
+dataset.sh
+---
+
+Download Redpajama and Chinese-Pretraining
