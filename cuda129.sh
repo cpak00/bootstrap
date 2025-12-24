@@ -28,6 +28,7 @@ ensure_miniconda() {
     #         install_miniconda
     #     fi
     if ( conda activate base >/dev/null 2>&1 ); then
+        echo "✅ Conda already exists."
     else
         install_miniconda
         export PATH="${MINICONDA_DIR}/bin:${PATH}"
