@@ -30,8 +30,8 @@ ensure_miniconda() {
     if ( conda activate base >/dev/null 2>&1 ); then
     else
         install_miniconda
+        export PATH="${MINICONDA_DIR}/bin:${PATH}"
     fi
-    export PATH="${MINICONDA_DIR}/bin:${PATH}"
     conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
     conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
     conda init --all
