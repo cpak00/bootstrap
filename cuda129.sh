@@ -21,12 +21,13 @@ install_miniconda() {
 
 ensure_miniconda() {
     local conda_sh="${MINICONDA_DIR}/etc/profile.d/conda.sh"
-    if [ -d "${MINICONDA_DIR}" ]; then
-        if ! ( source "${conda_sh}" >/dev/null 2>&1 && conda activate base >/dev/null 2>&1 ); then
-            echo "⚠️ Failed to activate existing Miniconda, reinstalling..."
-            rm -rf "${MINICONDA_DIR}"
-            install_miniconda
-        fi
+    # if [ -d "${MINICONDA_DIR}" ]; then
+    #     if ! ( source "${conda_sh}" >/dev/null 2>&1 && conda activate base >/dev/null 2>&1 ); then
+    #         echo "⚠️ Failed to activate existing Miniconda, reinstalling..."
+    #         rm -rf "${MINICONDA_DIR}"
+    #         install_miniconda
+    #     fi
+    if ! ( conda activate base >/dev/null 2>&1 ); then
     else
         install_miniconda
     fi
