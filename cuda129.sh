@@ -1,11 +1,13 @@
 #! /bin/bash
 # set -xeo pipefail
+touch /root/.no_auto_tmux
 
 git config --global user.email "cymcpak00@gmail.com"
 git config --global user.name "Chen Yiming"
 git config pull.rebase false
 
-MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+# MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+MINICONDA_URL="https://github.com/conda-forge/miniforge/releases/download/25.11.0-0/Miniforge3-25.11.0-0-Linux-x86_64.sh"
 MINICONDA_DIR="${HOME}/miniconda"
 
 install_miniconda() {
