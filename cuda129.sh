@@ -27,7 +27,7 @@ ensure_miniconda() {
     #         rm -rf "${MINICONDA_DIR}"
     #         install_miniconda
     #     fi
-    if ! ( conda activate base >/dev/null 2>&1 ); then
+    if ( conda activate base >/dev/null 2>&1 ); then
     else
         install_miniconda
     fi
