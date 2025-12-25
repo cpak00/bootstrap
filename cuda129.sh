@@ -7,7 +7,7 @@ git config pull.rebase false
 
 # MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
 MINICONDA_URL="https://github.com/conda-forge/miniforge/releases/download/25.11.0-0/Miniforge3-25.11.0-0-Linux-x86_64.sh"
-MINICONDA_DIR="${HOME}/miniconda"
+MINICONDA_DIR="/opt/miniforge"
 
 install_miniconda() {
     echo "⬇️ Installing Miniconda (Linux)..."
