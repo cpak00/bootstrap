@@ -12,17 +12,9 @@ echo "ℹ️ Creating user '$NEW_USER'..."
 useradd -m -s /bin/bash "$NEW_USER"
 
 # Add user to sudo group
-usermod -aG sudo "$NEW_USER"
+# usermod -aG sudo "$NEW_USER"
 
 echo "✅ User '$NEW_USER' created and added to sudo group."
-EOF
-
-ssh root@vastai bash <<EOF
-set -euox pipefail
-
-# Ensure sudo is installed
-apt-get update -y
-apt-get install -y sudo curl emacs
 
 # Create SSH directory for new user
 mkdir -p /home/"$NEW_USER"/.ssh
@@ -32,4 +24,4 @@ chmod 700 /home/"$NEW_USER"/.ssh
 cp /root/.ssh/authorized_keys /home/"$NEW_USER"/.ssh/authorized_keys
 chmod 600 /home/"$NEW_USER"/.ssh/authorized_keys
 chown -R "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.ssh
-EOF
+
