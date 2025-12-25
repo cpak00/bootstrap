@@ -1,6 +1,5 @@
 #! /bin/bash
 # set -xeo pipefail
-touch /root/.no_auto_tmux
 
 git config --global user.email "cymcpak00@gmail.com"
 git config --global user.name "Chen Yiming"
