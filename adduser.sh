@@ -25,3 +25,5 @@ cp /root/.ssh/authorized_keys /home/"$NEW_USER"/.ssh/authorized_keys
 chmod 600 /home/"$NEW_USER"/.ssh/authorized_keys
 chown -R "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.ssh
 
+cp -r /root/.condarc /home/"$NEW_USER"/.
+chown -R "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.condarc
