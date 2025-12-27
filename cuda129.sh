@@ -56,6 +56,9 @@ else
     echo "✅ Conda environment '$ENV_NAME' already exists."
 fi
 
+# --- Enter the environment at startup ---
+echo "conda activate $ENV_NAME" >> /root/.bashrc
+
 # --- Activate the environment ---
 # Note: we must source conda.sh to use 'conda activate' in a script.
 conda activate "$ENV_NAME"
@@ -78,6 +81,9 @@ pip install libtorch
 pip install psutil
 pip install --no-build-isolation flash_attn
 pip install deepspeed
+
+# tools
+pip install tensorboardX
 
 # Check
 python -c "import torch; import transformers; import triton; import deepspeed; from flash_attn import flash_attn_varlen_func; assert torch.cuda.is_available(), 'no cuda';"
