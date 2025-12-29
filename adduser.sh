@@ -29,5 +29,8 @@ chown -R "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.ssh
 cp /root/.condarc /home/"$NEW_USER"/.
 chown "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.condarc
 
-cp /root/.bashrc /home/"$NEW_USER"/.
-chown "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.bashrc
+# cp /root/.bashrc /home/"$NEW_USER"/.
+# chown "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.bashrc
+
+touch /home/"$NEW_USER"/.no_auto_tmux
+
