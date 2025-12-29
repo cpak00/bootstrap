@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/source
 # set -xeo pipefail
 
 git config --global user.email "cymcpak00@gmail.com"

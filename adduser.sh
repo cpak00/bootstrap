@@ -1,4 +1,4 @@
-
+#! /bin/bash
 NEW_USER=$1
 
 # Check if user already exists
