@@ -14,3 +14,4 @@ git clone https://github.com/cloneofsimo/vqgan-training $HOME_PATH/model/VAE
 git clone https://github.com/bytedance-seed/BAGEL.git $HOME_PATH/model/Bagel-7B
 
 hf download ByteDance-Seed/BAGEL-7B-MoT --local-dir $HOME_PATH/model/Bagel-7B/model
+touch $HOME_PATH/model/Bagel-7B/__init__.py
