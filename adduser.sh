@@ -1,6 +1,6 @@
 #! /bin/bash
 NEW_USER=$1
-ENV_NAME=te
+ENV_NAME="te"
 
 # Check if user already exists
 if id "$NEW_USER" &>/dev/null; then
