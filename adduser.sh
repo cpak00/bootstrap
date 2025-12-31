@@ -1,5 +1,6 @@
 #! /bin/bash
 NEW_USER=$1
+ENV_NAME=te
 
 # Check if user already exists
 if id "$NEW_USER" &>/dev/null; then
@@ -33,4 +34,4 @@ chown "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.condarc
 # chown "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.bashrc
 
 touch /home/"$NEW_USER"/.no_auto_tmux
-
+echo "conda activate $ENV_NAME" >> /home/"$NEW_USER"/.bashrc
