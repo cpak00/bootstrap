@@ -1,6 +1,7 @@
 #! /bin/bash
 NEW_USER=$1
 ENV_NAME="te"
+CONDA_HOME=`which conda`
 
 # Check if user already exists
 if id "$NEW_USER" &>/dev/null; then
@@ -32,6 +33,8 @@ chown "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.condarc
 
 # cp /root/.bashrc /home/"$NEW_USER"/.
 # chown "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"/.bashrc
+
+su - $NEW_USER -c "$CONDA_HOME init"
 
 touch /home/"$NEW_USER"/.no_auto_tmux
 echo "conda activate $ENV_NAME" >> /home/"$NEW_USER"/.bashrc
