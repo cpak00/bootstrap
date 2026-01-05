@@ -38,5 +38,5 @@ su - $NEW_USER -c "$CONDA_HOME init"
 
 touch /home/"$NEW_USER"/.no_auto_tmux
 echo "conda activate $ENV_NAME" >> /home/"$NEW_USER"/.bashrc
-echo "export HF_HOME= /home/$NEW_USER/.hf_home" >> /home/"$NEW_USER"/.bashrc
+echo "export HF_HOME=/home/$NEW_USER/.hf_home" >> /home/"$NEW_USER"/.bashrc
 
