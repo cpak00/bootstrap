@@ -81,6 +81,7 @@ pip install libtorch
 pip install psutil
 pip install --no-build-isolation flash_attn
 pip install deepspeed
+pip install webdataset
 
 # tools
 pip install tensorboardX
