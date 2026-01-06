@@ -82,6 +82,7 @@ pip install psutil
 pip install --no-build-isolation flash_attn
 pip install deepspeed
 pip install webdataset
+pip install matplotlib
 
 # tools
 pip install tensorboardX
