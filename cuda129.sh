@@ -85,6 +85,7 @@ pip install webdataset
 pip install matplotlib
 
 # tools
+pip install tensorboard
 pip install tensorboardX
 
 # Check
