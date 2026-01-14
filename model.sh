@@ -1,7 +1,7 @@
 #! /bin/bash
 HOME_PATH='/workspace'
-MODELS=('Qwen/Qwen3-4B')
-MODELS_NAME=('Qwen3-4B')
+MODELS=('Qwen/Qwen2.5-7B')
+MODELS_NAME=('Qwen2.5-7B')
 
 for ((i=0; i<${#MODELS[@]}; i++))
 do
