@@ -83,6 +83,7 @@ pip install --no-build-isolation flash_attn
 pip install deepspeed
 pip install webdataset
 pip install matplotlib
+pip install datasets==3.6.0
 
 # tools
 pip install tensorboard
