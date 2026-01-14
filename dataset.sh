@@ -1,6 +1,7 @@
 #! /bin/bash
 HOME_PATH='/workspace'
-DATASETS=('jingyaogong/minimind_dataset' 'konwoo/RedPajama-Data-1T-Sample-subset850000' 'Linly-AI/Chinese-pretraining-dataset' 'benjamin-paine/imagenet-1k-256x256')
+# DATASETS=('jingyaogong/minimind_dataset' 'konwoo/RedPajama-Data-1T-Sample-subset850000' 'Linly-AI/Chinese-pretraining-dataset' 'benjamin-paine/imagenet-1k-256x256')
+DATASETS=('jingyaogong/minimind_dataset' 'togethercomputer/RedPajama-Data-1T' 'Linly-AI/Chinese-pretraining-dataset' 'benjamin-paine/imagenet-1k-256x256')
 DATASETS_NAME=('minimind_dataset' 'RedPajama' 'Chinese-pretraining' 'Imagenet')
 
 
