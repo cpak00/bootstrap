@@ -84,6 +84,7 @@ pip install deepspeed
 pip install webdataset
 pip install matplotlib
 pip install datasets==3.6.0
+pip install huggingface_hub[cli]
 
 # tools
 pip install tensorboard
