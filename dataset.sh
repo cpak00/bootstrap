@@ -10,6 +10,10 @@ do
     python src/hf_local.py dataset ${DATASETS[$i]} $HOME_PATH/dataset/${DATASETS_NAME[$i]}
 done
 
+wget -O bagel_example.zip \
+  https://lf3-static.bytednsdoc.com/obj/eden-cn/nuhojubrps/bagel_example.zip
+unzip bagel_example.zip -d /data
+
 mkdir -p $HOME_PATH/dataset/mscoco
 wget http://images.cocodataset.org/zips/train2017.zip -O $HOME_PATH/dataset/mscoco/train2017.zip
 wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip -O $HOME_PATH/dataset/mscoco/annotations_trainval2017.zip
