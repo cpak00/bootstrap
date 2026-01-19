@@ -12,7 +12,7 @@ done
 
 wget -O bagel_example.zip \
   https://lf3-static.bytednsdoc.com/obj/eden-cn/nuhojubrps/bagel_example.zip
-unzip bagel_example.zip -d /data
+unzip bagel_example.zip -d bagel_example
 
 mkdir -p $HOME_PATH/dataset/mscoco
 wget http://images.cocodataset.org/zips/train2017.zip -O $HOME_PATH/dataset/mscoco/train2017.zip
