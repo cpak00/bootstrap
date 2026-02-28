@@ -68,6 +68,7 @@ echo "Python version: $(python --version)"
 
 cd "$HOME"
 
+# pytorch-gpu=2.9
 conda install -y -c nvidia -c conda-forge pytorch=2.9 torchvision=0.24 transformers=4.57 cuda=12.9.1 cuda-toolkit=12.9
 
 export CUDA_PATH=/usr/local/cuda
